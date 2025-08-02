@@ -28,7 +28,7 @@ streamlit.components for responsive design
 📦 Installation
 
 # Clone the repository
-git clone https://github.com/your-username/cold-email-generator.git
+git clone https://musharafhussainabid/cold-email-generator.git
 cd cold-email-generator
 
 # Create virtual environment

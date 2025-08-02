@@ -3,14 +3,13 @@ import requests
 from dotenv import load_dotenv
 
 load_dotenv()
-
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 
-def generate_cold_email(name, company, product, goal, tone="Professional"):
+def generate_cold_email(name, company, product, goal, tone="Professional", length_type="Paragraphs", length_value=3):
     prompt = f"""
 You are an expert email copywriter.
 
-Write a cold email for the following context:
+Write a cold email with the following details:
 
 Recipient: {name}
 Company: {company}
@@ -18,10 +17,11 @@ Product/Service Offered: {product}
 Objective: {goal}
 Tone: {tone}
 
-The email should:
-- Be short (80-150 words)
+Requirements:
+- The email must have approximately {length_value} {length_type.lower()}
 - Be personalized and engaging
-- Contain a CTA (e.g., book a call, reply to discuss, etc.)
+- Include a strong call-to-action (e.g., book a call, reply to discuss)
+- Do NOT include any extra comments outside the email
 
 Respond only with the email content.
 """
